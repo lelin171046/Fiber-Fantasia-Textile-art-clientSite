@@ -7,26 +7,43 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './Component/Error.jsx';
-import Error from './Component/Error.jsx';
+
 import NotFound from './Component/NotFound.jsx';
 import Root from './assets/Layout/Root.jsx';
-import SignIn from './Component/UserLogIn/SignIn.jsx';
+
+import Home from './Component/Home.jsx';
+import AllArt from './ArtAndCraft/AllArt.jsx';
+import LogIn from './Component/UserLogIn/LogIn.jsx';
+import AddItem from './Component/AddItem.jsx';
+import { ChakraProvider } from '@chakra-ui/react';
+import MyArtAndCraft from './Component/MyArtAndCraft.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<NotFound></NotFound>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
-        path: '/home',
+        path: '/',
         element: <Home></Home>
 
       },
       {
-        path: '/signin',
-        element: <SignIn></SignIn>
+        path: '/login',
+        element: <LogIn></LogIn>
+      },
+      {
+        path: '/allart',
+        element: <AllArt></AllArt>
+      },
+      {
+        path: '/additem',
+        element: <AddItem></AddItem>
+      },
+      {
+        path: '/myart',
+        element: <MyArtAndCraft></MyArtAndCraft>
       }
     ]
   },
@@ -34,6 +51,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
+
   </React.StrictMode>,
 )

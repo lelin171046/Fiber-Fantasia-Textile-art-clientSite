@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Home = () => {
-  return (
-    <div>
-      <h4><div className="card card-compact bg-base-100 w-96 shadow-xl">
+const MyArtAndCraft = () => {
+    return (
+        <div>
+            <h4><div className="card card-compact bg-base-100 w-96 shadow-xl">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -17,8 +17,8 @@ const Home = () => {
           </div>
         </div>
       </div></h4>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default Home;
+export default MyArtAndCraft;
