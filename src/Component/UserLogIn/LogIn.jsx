@@ -1,5 +1,7 @@
 import { Button, Input, InputGroup, InputRightElement, Show } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import SocialLogIn from './SocialLogIn';
 
 const LogIn = () => {
 
@@ -12,7 +14,7 @@ const LogIn = () => {
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold">Login now!</h1>
-     
+     <p className='pt-5 pl-3'>If you are new? Please <Link className='text-violet-800 font-semibold' to={'/signup'}>Sign Up</Link></p>
     </div>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form className="card-body">
@@ -46,6 +48,7 @@ const LogIn = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+    <SocialLogIn></SocialLogIn>
     </div>
   </div>
 </div>

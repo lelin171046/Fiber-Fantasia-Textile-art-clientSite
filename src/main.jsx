@@ -17,6 +17,8 @@ import LogIn from './Component/UserLogIn/LogIn.jsx';
 import AddItem from './Component/AddItem.jsx';
 import { ChakraProvider } from '@chakra-ui/react';
 import MyArtAndCraft from './Component/MyArtAndCraft.jsx';
+import SignUp from './Component/UserLogIn/SignUp.jsx';
+import FirebaseProvider from './FireBase/FirebaseProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: '/myart',
         element: <MyArtAndCraft></MyArtAndCraft>
+      },
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>
       }
     ]
   },
@@ -52,7 +58,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider>
-      <RouterProvider router={router} />
+    <FirebaseProvider>
+    <RouterProvider router={router} />
+    </FirebaseProvider>
     </ChakraProvider>
 
   </React.StrictMode>,

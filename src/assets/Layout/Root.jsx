@@ -5,9 +5,11 @@ import Footer from './Footer';
 
 const Root = () => {
     return (
-        <div className=''>
+        <div className='h-16'>
             <Header></Header>
-            <Outlet></Outlet>
+            <main className='flex-grow mb-4 min-h-[calc(100vh-116px)]'>
+                <Outlet />
+            </main>
             <Footer></Footer>
         </div>
     );
