@@ -26,14 +26,23 @@ const AddItem = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form Data Submitted:', formData);
+
         // Add your form submission logic here
+
+        fetch('http://localhost:5001/additem', {
+            method: "POST",
+            headers: {
+                "content-type" : "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
     };
 
     return (
-        <div className="min-h-screen dark:bg-gray-100 dark:text-gray-800">
+        <div className="min-h-screen  dark:bg-gray-100 dark:text-gray-800">
+            <div className="p-4 border-4 border-red-600 lg:p-16 shadow-2xl bg-white rounded-lg">
             <h1 className="text-2xl text-pink-400 font-bold mb-4">Add Your Art or Craft</h1>
-            <div className="p-4 lg:p-16 shadow-2xl bg-white rounded-lg">
-                <form onSubmit={handleSubmit} className='border-4 border-red-600 max-w-screen-lg mx-auto'>
+                <form onSubmit={handleSubmit} className=' max-w-screen-lg mx-auto'>
                     <div className="flex flex-col lg:flex-row gap-3 flex-grow">
                         <div className="w-full lg:w-1/2">
                             <div className="mb-4">

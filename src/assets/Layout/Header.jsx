@@ -114,7 +114,9 @@ const Header = () => {
 					>
 						All Art & Craft
 					</NavLink>
-					<NavLink
+					{
+						user? <>
+						<NavLink
 						to="/additem"
 						className={({ isActive }) =>
 							isActive
@@ -134,6 +136,10 @@ const Header = () => {
 					>
 						My Art
 					</NavLink>
+					</> :
+					null
+					}
+					
 					<NavLink
 						to="/login"
 						className={({ isActive }) =>
@@ -142,7 +148,7 @@ const Header = () => {
 								: 'font-semibold'
 						}
 					>
-						Log In
+						About Us
 					</NavLink>
 
 				</li>

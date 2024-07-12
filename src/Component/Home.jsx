@@ -12,7 +12,7 @@ const Home = () => {
         <div className=' w-full h-full' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', opacity: "1" }}>
           <div className='flex justify-center items-center h-full'>
             <div className=' w-[400px] md:w-[700px]  lg:w-[800px] mx-auto h-60'>
-              <h3 className='text-3xl text-white text-center'>Crafting Connections Through Textile Art</h3>
+              <h3 className='text-3xl text-white text-center'></h3>
               <input type="search" name="search" placeholder='Search here' value={''} className='w-full h-16 border-2 rounded-r-xl border-gray-400 mt-12 px-5 ' id="" />
             </div>
           </div>

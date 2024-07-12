@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogIn from './SocialLogIn';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hook/useAuth';
+import toast from 'react-hot-toast';
 
 const LogIn = () => {
 
@@ -23,11 +24,11 @@ const LogIn = () => {
       .then((result) => {
           if (result.user) {
               navigate(from)
-              return alert('Login Successfull')
+              return toast.success('Login Successfull')
           }
       })
       .catch(error =>{
-          console.log(error.message);
+          toast.error(error.message);
       })
   };
   

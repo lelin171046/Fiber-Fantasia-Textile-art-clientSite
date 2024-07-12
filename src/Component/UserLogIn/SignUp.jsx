@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { updateProfile as firebaseUpdateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 // Assuming you are using react-toastify for notifications
 
 const SignUp = () => {
@@ -25,6 +26,7 @@ const SignUp = () => {
           displayName: fullName,
           photoURL: image
         });
+        
       })
       .then(() => {
         Swal.fire({
@@ -34,12 +36,20 @@ const SignUp = () => {
           showConfirmButton: false,
           timer: 1500
         });
+         
+       
 
         navigate('/');
       })
-      fetch('')
+      fetch('http://localhost:5001/users', {
+        method : "POST",
+        headers : {
+          "content-type" : "application/json"
+        },
+        body: JSON.stringify(data)
+      })
       .catch(error => {
-        alert.error(error.message);
+        toast.error(error.message);
       });
   };
 
