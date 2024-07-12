@@ -26,7 +26,7 @@ const Header = () => {
 	}
 	return (
 
-		<div className="navbar w-full shadow-lg dark:bg-gray-100 dark:text-gray-800">
+		<div className="navbar shadow-lg bg-blue-300 dark:bg-gray-100 dark:text-gray-800">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -90,7 +90,7 @@ const Header = () => {
 						</li>
 					</ul>
 				</div>
-				<Link to={'/'} className="btn btn-ghost text-xl">Fiber<span className='text-pink-500'>Fantasia</span></Link>
+				<Link to={'/'} className="btn border-1 border-pink-400 dark:bg-gray-400 gap-0 dark:text-gray-600 btn-sm font-bold text-xl">Fiber<span className='text-pink-500'>  Fantasia</span></Link>
 			</div>
 			<div className="navbar-center hidden lg:flex items-stretch space-x-3 ">
 				<li className="flex gap-5">
@@ -151,21 +151,24 @@ const Header = () => {
 
 				{
 					user ? <>
-						<details className="dropdown">
-							<summary className="btn m-1">
-							<div className="flex gap-2"> <img 
-						 className='rounded-full h-10 hover:cursor-pointer' src={user.photoURL} /> </div>
+						<details className="dropdown mr-4">
+							<summary className=" m-1">
+								<div className="flex gap-2 border-2 rounded-full shadow-sm border-pink-600"> <img
+									className='rounded-full  h-10 hover:cursor-pointer' src={user.photoURL} /> </div>
 							</summary>
 							<ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-							<NavLink onClick={logOutUser} ><button type="button" className=" font-semibold border rounded dark:border-gray-800 dark:text-gray-800">LogOut</button></NavLink>
 
-								<li><a>Item 2</a></li>
+								<li><a>{user.displayName}</a></li>
+								<li>
+									<NavLink onClick={logOutUser} ><a className=" font-semibold dark:border-gray-800 dark:text-gray-800">LogOut</a></NavLink>
+
+								</li>
 							</ul>
 						</details>
-						
+
 
 					</> :
-						<NavLink to={'/login'} ><button type="button" className=" font-semibold border rounded dark:border-gray-800 dark:text-gray-800">Login</button></NavLink>
+						<NavLink to={'/login'} ><button type="button" className="btn bg-pink-500 btn-sm font-semibold border rounded dark:border-gray-800 dark:text-gray-800">Login</button></NavLink>
 				}
 
 				<label className="swap swap-rotate">

@@ -37,6 +37,7 @@ const SignUp = () => {
 
         navigate('/');
       })
+      fetch('')
       .catch(error => {
         alert.error(error.message);
       });

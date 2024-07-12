@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 const Root = () => {
     return (
-        <div className='h-16'>
+        <div className='relative'>
             <Header></Header>
             <main className='flex-grow mb-4 min-h-[calc(100vh-116px)]'>
                 <Outlet />
