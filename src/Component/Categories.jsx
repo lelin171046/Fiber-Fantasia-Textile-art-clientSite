@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Loader from './Loader';
 
 const Categories = () => {
     const { subcategory } = useParams();
@@ -31,13 +32,13 @@ const Categories = () => {
     console.log(category);
 
     // Handling loading and error states
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loader></Loader>;
     if (error) return <p>Error: {error.message}</p>;
 
     // Render the component
     return (
         <div>
-            {category.length < 1 ? <div><h2 >Not Sub_Category Found!</h2></div> : category.map(item => <div key={item?._id} className="w-full p-2">
+            {category.length < 1 ? <div><h2 >Not Sub_Category Found!</h2></div> : category.map(item => <div key={item?._id} className="w-full grid lg:grid-cols-3 md:grid-cols-2 p-2">
                 <div className="card bg-base-100 shadow-xl h-full flex flex-col">
                     <figure className="h-64 overflow-hidden">
                         <img

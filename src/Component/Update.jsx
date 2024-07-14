@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import useAuth from '../Hook/useAuth';
 import { useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Update = () => {
     const { id } = useParams();
     const { user } = useAuth();
     const oldData = useLoaderData();
-    const {_id,
+    const { _id,
         name,
         creator,
         description,
@@ -20,7 +21,7 @@ const Update = () => {
     } = oldData;
 
 
- 
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,10 +33,11 @@ const Update = () => {
         const publishDate = form.publishDate.value;
         const category = form.category.value;
         const price = form.price.value;
-        const  rating = form. rating.value;
-        const  customization = form. customization.value;
-        const  stockStatus = form. stockStatus.value;
-        const updateData = { name,
+        const rating = form.rating.value;
+        const customization = form.customization.value;
+        const stockStatus = form.stockStatus.value;
+        const updateData = {
+            name,
             creator,
             description,
             publishDate,
@@ -44,11 +46,12 @@ const Update = () => {
             price,
             rating,
             customization,
-            stockStatus }
-       console.log(updateData);
+            stockStatus
+        }
+        console.log(updateData);
 
 
-        fetch(`https://localhost:5001/update/${_id}`, {
+        fetch(`http://localhost:5001/update/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -83,8 +86,8 @@ const Update = () => {
                                         type="text"
                                         name="name"
                                         placeholder='Art or Craft name'
-                                       defaultValue={name}
-                                        
+                                        defaultValue={name}
+
                                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         required
                                     />
@@ -95,7 +98,7 @@ const Update = () => {
                                         placeholder='Creator name'
                                         type="text"
                                         name="creator"
-                                       defaultValue={creator}
+                                        defaultValue={creator}
                                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         required
                                     />
@@ -116,7 +119,7 @@ const Update = () => {
                                         type="number"
                                         name="price"
                                         placeholder='Price'
-                                       defaultValue={price}
+                                        defaultValue={price}
                                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         required
                                     />
@@ -129,7 +132,7 @@ const Update = () => {
                                         placeholder='Rating'
                                         min="1"
                                         max="5"
-                                       defaultValue={rating}
+                                        defaultValue={rating}
                                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         required
                                     />
@@ -141,7 +144,7 @@ const Update = () => {
                                     <input
                                         type="date"
                                         name="publishDate"
-                                       defaultValue={publishDate}
+                                        defaultValue={publishDate}
                                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         required
                                     />
@@ -177,7 +180,7 @@ const Update = () => {
                                     <label className="block text-sm font-medium text-gray-700">Customization</label>
                                     <select
                                         name="customization"
-                                      defaultValue={customization}
+                                        defaultValue={customization}
                                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         required
                                     >
@@ -189,7 +192,7 @@ const Update = () => {
                                     <label className="block text-sm font-medium text-gray-700">Stock Status</label>
                                     <select
                                         name="stockStatus"
-                                       defaultValue={stockStatus}
+                                        defaultValue={stockStatus}
                                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         required
                                     >
