@@ -25,9 +25,9 @@ const Home = () => {
       });
   }, [user]);
 
-if(loading){
-  return <Loader></Loader>
-}
+  if (loading) {
+    return <Loader></Loader>
+  }
   return (
     <div>
 
@@ -54,7 +54,7 @@ if(loading){
                   <h2 className="card-title">{p.name}</h2>
                   <p>Published at: {p.publishDate}</p>
                   <div className="card-actions justify-end">
-                  <button className="btn btn-primary"><Link to={`/allart/details/${p?._id}`}>View details</Link></button>
+                    <button className="btn btn-primary"><Link to={`/allart/details/${p?._id}`}>View details</Link></button>
                   </div>
                 </div>
               </div></h4>
@@ -69,12 +69,12 @@ if(loading){
           <div className="card bg-base-100 image-full w-96 shadow-xl">
             <figure>
               <img
-              src=''                alt="Shoes" />
+                src='' alt="Shoes" />
             </figure>
             <div className="card-body">
               <h2 className="card-title text-white">Embroidery!</h2>
               <div className="card-actions justify-end">
-               <Link to={`/category/Embroidery}`}> <button className="btn btn-secondary">View more</button></Link>
+                <Link to={`/category/Embroidery}`}> <button className="btn btn-secondary">View more</button></Link>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ if(loading){
             <div className="card-body">
               <h2 className="card-title text-white">Knitting & Crocheting!</h2>
               <div className="card-actions justify-end">
-               <Link to={`/category/Knitting`}> <button className="btn btn-secondary">View more</button></Link>
+                <Link to={`/category/Knitting`}> <button className="btn btn-secondary">View more</button></Link>
               </div>
             </div>
           </div>
@@ -100,7 +100,8 @@ if(loading){
             <div className="card-body">
               <h2 className="card-title text-white"> Quilting!</h2>
               <div className="card-actions justify-end">
-                <button className="btn btn-secondary">View more</button>
+                <Link to={`/category/Quilting`}> <button className="btn btn-secondary">View more</button></Link>
+
               </div>
             </div>
           </div>
@@ -113,7 +114,7 @@ if(loading){
             <div className="card-body">
               <h2 className="card-title text-white">Beadwork!</h2>
               <div className="card-actions justify-end">
-               <Link to={`/category/Beadwork`}> <button className="btn btn-secondary">View more</button></Link>
+                <Link to={`/category/Beadwork`}> <button className="btn btn-secondary">View more</button></Link>
               </div>
             </div>
           </div>
@@ -126,7 +127,7 @@ if(loading){
             <div className="card-body">
               <h2 className="card-title text-white">Tie-Dyeing!</h2>
               <div className="card-actions justify-end">
-              <Link to={`category/Tie-Dyeing`}>  <button className="btn btn-secondary">View more</button></Link>
+                <Link to={`category/Tie-Dyeing`}>  <button className="btn btn-secondary">View more</button></Link>
               </div>
             </div>
           </div>
@@ -139,7 +140,7 @@ if(loading){
             <div className="card-body">
               <h2 className="card-title text-white">Macrame!</h2>
               <div className="card-actions justify-end">
-                <button className="btn btn-secondary">View more</button>
+                <Link to={`category/Macrame`}>  <button className="btn btn-secondary">View more</button></Link>
               </div>
             </div>
           </div>
