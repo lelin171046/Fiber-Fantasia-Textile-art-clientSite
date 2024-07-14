@@ -23,6 +23,7 @@ import Update from './Component/Update.jsx';
 import AboutUs from './Component/AboutUs.jsx';
 import CraftAndArtDetails from './Component/CraftAndArtDetails.jsx';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
+import Categories from './Component/Categories.jsx';
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <AboutUs></AboutUs>
+      },
+      {
+        path: '/category/:subcategory',
+        element:<Categories></Categories>
       }
     ]
   },

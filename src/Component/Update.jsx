@@ -6,7 +6,7 @@ const Update = () => {
     const { id } = useParams();
     const { user } = useAuth();
     const oldData = useLoaderData();
-    const {
+    const {_id,
         name,
         creator,
         description,
@@ -19,7 +19,6 @@ const Update = () => {
         stockStatus
     } = oldData;
 
-    const [formData, setFormData] = useState();
 
  
 
@@ -46,9 +45,10 @@ const Update = () => {
             rating,
             customization,
             stockStatus }
-       
+       console.log(updateData);
 
-        fetch(`https://localhost:5001/update/${id}`, {
+
+        fetch(`https://localhost:5001/update/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
