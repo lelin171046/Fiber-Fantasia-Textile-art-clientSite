@@ -19,6 +19,10 @@ import { ChakraProvider } from '@chakra-ui/react';
 import MyArtAndCraft from './Component/MyArtAndCraft.jsx';
 import SignUp from './Component/UserLogIn/SignUp.jsx';
 import FirebaseProvider from './FireBase/FirebaseProvider.jsx';
+import Update from './Component/Update.jsx';
+import AboutUs from './Component/AboutUs.jsx';
+import CraftAndArtDetails from './Component/CraftAndArtDetails.jsx';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,15 +45,32 @@ const router = createBrowserRouter([
       },
       {
         path: '/additem',
-        element: <AddItem></AddItem>
+        element: <PrivateRoute>
+          <AddItem></AddItem>
+        </PrivateRoute>
       },
       {
         path: '/myart',
-        element: <MyArtAndCraft></MyArtAndCraft>
+        element: <PrivateRoute><MyArtAndCraft></MyArtAndCraft></PrivateRoute>
       },
       {
         path: '/signup',
         element: <SignUp></SignUp>
+      },
+      {
+        path: '/allart/details/:id',
+        element: <PrivateRoute>
+          <CraftAndArtDetails />
+        </PrivateRoute>
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5001/allCraft/${params.id}`)
+      },
+      {
+        path: '/about',
+        element: <AboutUs></AboutUs>
       }
     ]
   },
@@ -58,9 +79,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider>
-    <FirebaseProvider>
-    <RouterProvider router={router} />
-    </FirebaseProvider>
+      <FirebaseProvider>
+        <RouterProvider router={router} />
+      </FirebaseProvider>
     </ChakraProvider>
 
   </React.StrictMode>,

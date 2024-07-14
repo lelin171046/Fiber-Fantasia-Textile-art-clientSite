@@ -114,8 +114,7 @@ const Header = () => {
 					>
 						All Art & Craft
 					</NavLink>
-					{
-						user? <>
+					
 						<NavLink
 						to="/additem"
 						className={({ isActive }) =>
@@ -136,12 +135,11 @@ const Header = () => {
 					>
 						My Art
 					</NavLink>
-					</> :
-					null
-					}
+					 
+					
 					
 					<NavLink
-						to="/login"
+						to="/about"
 						className={({ isActive }) =>
 							isActive
 								? 'font-bold border-b-4 border-red-400 text-red-400'
@@ -162,7 +160,7 @@ const Header = () => {
 								<div className="flex gap-2 border-2 rounded-full shadow-sm border-pink-600"> <img
 									className='rounded-full  h-10 hover:cursor-pointer' src={user.photoURL} /> </div>
 							</summary>
-							<ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+							<ul className="menu left-3 dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
 
 								<li><a>{user.displayName}</a></li>
 								<li>

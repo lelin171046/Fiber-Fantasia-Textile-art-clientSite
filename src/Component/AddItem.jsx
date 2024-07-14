@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import useAuth from '../Hook/useAuth';
 
 const AddItem = () => {
+
+    const {user} = useAuth()
 
     const [formData, setFormData] = useState({
         name: '',
@@ -12,7 +16,8 @@ const AddItem = () => {
         price: '',
         rating: '',
         customization: 'No',
-        stockStatus: 'In stock'
+        stockStatus: 'In stock',
+        email: user.email
     });
 
     const handleChange = (e) => {
@@ -36,11 +41,17 @@ const AddItem = () => {
             },
             body: JSON.stringify(formData)
         })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                alert('Submit Data Successfully')
+            }
+        })
     };
 
     return (
-        <div className="min-h-screen  dark:bg-gray-100 dark:text-gray-800">
-            <div className="p-4 border-4 border-red-600 lg:p-16 shadow-2xl bg-white rounded-lg">
+        <div className="min-h-screen  m-5 dark:bg-gray-100 dark:text-gray-800">
+            <div className="p-4 border-2 border-pink-500 lg:p-16 shadow-2xl bg-white rounded-lg">
             <h1 className="text-2xl text-pink-400 font-bold mb-4">Add Your Art or Craft</h1>
                 <form onSubmit={handleSubmit} className=' max-w-screen-lg mx-auto'>
                     <div className="flex flex-col lg:flex-row gap-3 flex-grow">
@@ -69,17 +80,7 @@ const AddItem = () => {
                                     required
                                 />
                             </div>
-                            <div className="mb-4">
-                                <label className="block text-sm font-medium text-gray-700">Description</label>
-                                <textarea
-                                    name="description"
-                                    placeholder='Description'
-                                    value={formData.description}
-                                    onChange={handleChange}
-                                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    required
-                                />
-                            </div>
+                          
                             <div className="mb-4">
                                 <label className="block text-sm font-medium text-gray-700">Price</label>
                                 <input
@@ -101,6 +102,17 @@ const AddItem = () => {
                                     min="1"
                                     max="5"
                                     value={formData.rating}
+                                    onChange={handleChange}
+                                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    required
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-sm font-medium text-gray-700">Description</label>
+                                <textarea
+                                    name="description"
+                                    placeholder='Description'
+                                    value={formData.description}
                                     onChange={handleChange}
                                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     required
@@ -128,9 +140,10 @@ const AddItem = () => {
                                     value={formData.imageUrl}
                                     onChange={handleChange}
                                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    required
+                                
                                 />
                             </div>
+                            
                             <div className="mb-4">
                                 <label className="block text-sm font-medium text-gray-700">Category</label>
                                 <select
