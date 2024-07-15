@@ -11,7 +11,7 @@ const AllArt = () => {
   useEffect(() => {
     try {
       // setLoading(true);
-      fetch(`http://localhost:5001/allcraft`)
+      fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/allcraft`)
         .then(res => res.json())
         .then(data => {
           setCraft(data);

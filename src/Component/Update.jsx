@@ -53,7 +53,7 @@ const Update = () => {
         console.log(updateData);
 
 
-        fetch(`http://localhost:5001/update/${_id}`, {
+        fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/update/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

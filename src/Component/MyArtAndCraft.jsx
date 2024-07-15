@@ -11,7 +11,7 @@ const MyArtAndCraft = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5001/myCraft/${user.email}`)
+      fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/myCraft/${user.email}`)
         .then(res => res.json())
         .then(data => {
           setItem(data);
@@ -45,7 +45,7 @@ const MyArtAndCraft = () => {
     })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5001/myCraft/${_id}`, {
+          fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/myCraft/${_id}`, {
             method: 'DELETE',
           })
             .then(res => res.json())

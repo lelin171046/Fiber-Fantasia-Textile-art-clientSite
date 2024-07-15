@@ -6,7 +6,7 @@ const CraftAndArtDetails = () => {
   const [craft, setCraft] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:5001/allCraft/${id}`)
+    fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/allCraft/${id}`)
       .then(res => res.json())
       .then(data => {
         setCraft(data);
