@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import useAuth from '../Hook/useAuth';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Navigate, useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Update = () => {
     const { id } = useParams();
     const { user } = useAuth();
     const oldData = useLoaderData();
+    const navigate = useNavigate()
+    const form = '/myCraft';
     const { _id,
         name,
         creator,
@@ -69,7 +71,8 @@ const Update = () => {
                         confirmButtonText: 'Cool'
                     });
                 }
-            });
+                navigate(form)
+           });
     };
 
     return (

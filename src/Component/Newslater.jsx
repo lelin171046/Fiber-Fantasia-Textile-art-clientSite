@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Newslater = () => {
 	return (
 		<section className="dark:bg-gray-100 dark:text-gray-800">
-			<div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
+			<div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-0 xl:max-w-3xl">
 				<h1 className="text-4xl font-bold text-pink-600 leading-none sm:text-5xl">Crafting Connections <br /> 
 					 Through Textile Art
 				</h1>
-				<p className="px-8 mt-8 mb-12 text-lg">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
+				<p className="px-8 mt-8 mb-12 text-lg">Discover the beauty and intricacy of textile art that transcends boundaries and brings people together. Immerse yourself in a world where creativity and craftsmanship unite to tell unique stories and inspire meaningful connections.!</p>
 				<div className="flex flex-wrap gap-5 justify-center">
 					<button>
 
@@ -16,7 +17,7 @@ const Newslater = () => {
 							<span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
 								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
 							</span>
-							<span class="relative">Get started</span>
+							<Link to={'/allart'}><span class="relative">Get started</span></Link>
 						</a>
 
 

@@ -11,7 +11,7 @@ const LogIn = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log('login page form', location);
+  
   const from = location?.state || "/";
 
   const [show, setShow] = React.useState(false)

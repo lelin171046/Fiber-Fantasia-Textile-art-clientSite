@@ -18,7 +18,7 @@ const Stat = () => {
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <div className="stat-title">Downloads</div>
+            <div className="stat-title">Total Item</div>
             <div className="stat-value">31K</div>
             <div className="stat-desc">Jan 1st - Feb 1st</div>
           </div>
@@ -38,7 +38,7 @@ const Stat = () => {
               </svg>
             </div>
             <div className="stat-title">New Users</div>
-            <div className="stat-value">4,200</div>
+            <div className="stat-value">4065</div>
             <div className="stat-desc">↗︎ 400 (22%)</div>
           </div>
       

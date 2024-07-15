@@ -44,7 +44,7 @@ const Home = () => {
         {
           craft?.map(p => (
             <div key={p._id} className="">
-              <h4><div className="card card-compact bg-base-100 w-96 shadow-xl">
+              <h4><div className="card card-compact max-h-96 bg-base-100 w-96 shadow-xl">
                 <figure>
                   <img
                     src={p.imageUrl || "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"}
@@ -52,7 +52,8 @@ const Home = () => {
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{p.name}</h2>
-                  <p>Published at: {p.publishDate}</p>
+                  <p className="mt-2"><strong>Price:</strong> ${p.price}</p>
+                  <p><strong>Rating:</strong> ⭐ ({p.rating}/5)</p>
                   <div className="card-actions justify-end">
                     <button className="btn btn-primary"><Link to={`/allart/details/${p?._id}`}>View details</Link></button>
                   </div>
