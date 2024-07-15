@@ -14,7 +14,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/allcraft`)
+    fetch(`https://fiber-fantasia-server-site.vercel.app/allcraft`)
       .then(res => res.json())
       .then(data => {
 

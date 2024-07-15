@@ -41,7 +41,7 @@ const SignUp = () => {
 
         navigate('/');
       })
-      fetch('https://fiber-fantasia-server-site-9h7ytplys.vercel.app/users', {
+      fetch('https://fiber-fantasia-server-site.vercel.app/users', {
         method : "POST",
         headers : {
           "content-type" : "application/json"

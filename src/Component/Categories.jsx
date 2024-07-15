@@ -11,7 +11,7 @@ const Categories = () => {
     useEffect(() => {
         // Ensure the subcategory is available before fetching
         if (subcategory) {
-            fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/category/${subcategory}`)
+            fetch(`https://fiber-fantasia-server-site.vercel.app/category/${subcategory}`)
                 .then(res => {
                     if (!res.ok) {
                         throw new Error('Network response was not ok');

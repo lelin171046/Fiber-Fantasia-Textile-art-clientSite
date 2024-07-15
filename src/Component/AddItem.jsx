@@ -34,7 +34,7 @@ const AddItem = () => {
 
         // Add your form submission logic here
 
-        fetch('https://fiber-fantasia-server-site-9h7ytplys.vercel.app/additem', {
+        fetch('https://fiber-fantasia-server-site.vercel.app/additem', {
             method: "POST",
             headers: {
                 "content-type" : "application/json"

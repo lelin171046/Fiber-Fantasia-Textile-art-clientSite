@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`https://fiber-fantasia-server-site-9h7ytplys.vercel.app/allCraft/${params.id}`)
+        loader: ({ params }) => fetch(`https://fiber-fantasia-server-site.vercel.app/allCraft/${params.id}`)
       },
       {
         path: '/about',
